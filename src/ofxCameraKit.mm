@@ -320,6 +320,8 @@ static bool shouldRemoveDevice(ofxCameraDevice * d) {
     NSLog( @"  error:       %@\n", error );
     NSLog( @"  options:     %@\n", options );
     NSLog( @"  contextInfo: %p\n", contextInfo );
+    
+    
     /*
      //[file.device requestDeleteFiles:file.device.mediaFiles];
      Camera * cam = [self getCameraFromICDevice:file.device];
@@ -454,9 +456,18 @@ void ofxCameraKit::setDownloadFolder(string path) {
 }
 
 
+#pragma mark ofxCameraDevice
 //--------------------------------------------------------------
 // ofxCameraDevice C++ Interface
 //--------------------------------------------------------------
+void ofxCameraDevice::removeAllImages() {
+    if(device != NULL) {
+        ICCameraDevice * tempCamera = (ICCameraDevice*)device;
+		if(tempCamera != NULL) {
+            NSLog(@"does not work?!");
+        }
+    }
+}
 
 void ofxCameraDevice::openDevice() {
     if(device != NULL) {

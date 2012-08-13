@@ -34,6 +34,7 @@ class ofxCameraDevice {
     void takePicture();
     void openDevice();
     void closeDevice();
+    void removeAllImages();
 };
 
 class ofxDeviceEvent : public ofEventArgs {
